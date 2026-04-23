@@ -25,6 +25,7 @@ spec:
     email: backstage@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   parent: infrastructure
+  children: []
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Group
@@ -38,3 +39,4 @@ spec:
     email: other@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   parent: infrastructure
+  children: []
