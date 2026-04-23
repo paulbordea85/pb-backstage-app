@@ -21,7 +21,20 @@ metadata:
 spec:
   type: business-unit
   profile:
-    displayName: backstage
+    displayName: Backstage group
     email: backstage@example.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: infrastructure
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: other
+  description: Other
+spec:
+  type: business-unit
+  profile:
+    displayName: Other group
+    email: other@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   parent: infrastructure
