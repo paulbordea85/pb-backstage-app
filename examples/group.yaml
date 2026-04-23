@@ -12,3 +12,16 @@ spec:
   parent: ops
   children: [backstage, other]
   members: [jdoe]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: backstage
+  description: Backstage
+spec:
+  type: business-unit
+  profile:
+    displayName: backstage
+    email: backstage@example.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: infrastructure
