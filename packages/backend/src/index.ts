@@ -1,6 +1,7 @@
 import { createBackend } from '@backstage/backend-defaults';
 import { createBackendModule } from '@backstage/backend-plugin-api';
 import { githubAuthenticator } from '@backstage/plugin-auth-backend-module-github-provider';
+import { stringifyEntityRef } from '@backstage/catalog-model';
 import {
   authProvidersExtensionPoint,
   createOAuthProviderFactory,
@@ -88,16 +89,18 @@ const customAuthResolver = createBackendModule({
 
               const [userId] = email.split('@');
 
-              return ctx.issueToken({
-                claims: {
-                  sub: userId,
-                  ent: ["github", "paulbordea85"],
-                },
+              const userEntity = stringifyEntityRef({
+                kind: 'User',
+                name: userId,
+                namespace: 'default',
               });
 
-              // return ctx.signInWithCatalogUser({
-              //   entityRef: { name },
-              // });
+              return ctx.issueToken({
+                claims: {
+                  sub: userEntity,
+                  ent: [userEntity],
+                },
+              });
             },
           }),
         });

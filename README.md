@@ -1,6 +1,6 @@
 # [Backstage](https://backstage.io)
 
-This is your newly scaffolded Backstage App, Good Luck!
+Scaffolded Backstage App
 
 To start the app, run:
 
