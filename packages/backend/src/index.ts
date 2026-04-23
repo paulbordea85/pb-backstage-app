@@ -1,12 +1,10 @@
-/*
- * Hi!
- *
- * Note that this is an EXAMPLE Backstage backend. Please check the README.
- *
- * Happy hacking!
- */
-
 import { createBackend } from '@backstage/backend-defaults';
+import { createBackendModule } from '@backstage/backend-plugin-api';
+import { githubAuthenticator } from '@backstage/plugin-auth-backend-module-github-provider';
+import {
+  authProvidersExtensionPoint,
+  createOAuthProviderFactory,
+} from '@backstage/plugin-auth-node';
 
 const backend = createBackend();
 
@@ -27,6 +25,7 @@ backend.add(import('@backstage/plugin-techdocs-backend'));
 backend.add(import('@backstage/plugin-auth-backend'));
 // See https://backstage.io/docs/backend-system/building-backends/migrating#the-auth-plugin
 backend.add(import('@backstage/plugin-auth-backend-module-guest-provider'));
+
 // See https://backstage.io/docs/auth/guest/provider
 
 // catalog plugin
@@ -65,5 +64,48 @@ backend.add(import('@backstage/plugin-signals-backend'));
 
 // mcp actions plugin
 backend.add(import('@backstage/plugin-mcp-actions-backend'));
+
+const customAuthResolver = createBackendModule({
+  // This ID must be exactly "auth" because that's the plugin it targets
+  pluginId: 'auth',
+  // This ID must be unique, but can be anything
+  moduleId: 'github',
+  register(reg) {
+    reg.registerInit({
+      deps: { providers: authProvidersExtensionPoint },
+      async init({ providers }) {
+        providers.registerProvider({
+          providerId: 'github',
+          factory: createOAuthProviderFactory({
+            authenticator: githubAuthenticator,
+            async signInResolver(info, ctx) {
+              console.log(info);
+              const { profile: { email } } = info;
+
+              if (!email) {
+                throw new Error('User profile contained no email');
+              }
+
+              const [userId] = email.split('@');
+
+              return ctx.issueToken({
+                claims: {
+                  sub: userId,
+                  ent: ["github", "paulbordea85"],
+                },
+              });
+
+              // return ctx.signInWithCatalogUser({
+              //   entityRef: { name },
+              // });
+            },
+          }),
+        });
+      },
+    });
+  },
+});
+
+backend.add(customAuthResolver);
 
 backend.start();
