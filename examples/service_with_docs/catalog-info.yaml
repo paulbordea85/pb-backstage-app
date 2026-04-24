@@ -1,12 +1,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: artist-web
-  description: The place to be, for great artists
+  name: component-with-docs
+  description: A sample component for testing tech docs and github actions integration
   annotations:
     backstage.io/techdocs-ref: dir:.
     github.com/project-slug: 'paulbordea85/pb-backstage-app'
 spec:
   type: service
   lifecycle: production
-  owner: artist-relations-team
+  owner: infrastructure
