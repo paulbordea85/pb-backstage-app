@@ -5,7 +5,7 @@ metadata:
   description: The place to be, for great artists
   annotations:
     backstage.io/techdocs-ref: dir:.
-    github.com/project-slug: 'backstage/backstage'
+    github.com/project-slug: 'paulbordea85/pb-backstage-app'
 spec:
   type: service
   lifecycle: production
