@@ -1,15 +1,16 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: infrastructure
-  description: The infra business unit
+  name: pd-admin
+  description: The administrators group
 spec:
-  type: business-unit
+  type: role
   profile:
-    displayName: Infrastructure
-    email: infrastructure@example.com
+    displayName: Administrators
+    email: pb-admin@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: [backstage, other]
+<<<<<<< HEAD
   members: [jdoe]
 ---
 apiVersion: backstage.io/v1alpha1
@@ -39,3 +40,6 @@ spec:
     picture: https://example.com/groups/bu-infrastructure.jpeg
   parent: infrastructure
   children: []
+=======
+  members: [paulb]
+>>>>>>> feature_branch
