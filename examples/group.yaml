@@ -10,7 +10,6 @@ spec:
     email: pb-admin@example.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   children: [backstage, other]
-<<<<<<< HEAD
   members: [jdoe]
 ---
 apiVersion: backstage.io/v1alpha1
@@ -40,6 +39,16 @@ spec:
     picture: https://example.com/groups/bu-infrastructure.jpeg
   parent: infrastructure
   children: []
-=======
   members: [paulb]
->>>>>>> feature_branch
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: infrastructure
+  description: Infrastructure
+spec:
+  type: business-unit
+  profile:
+    displayName: Infrastructure group
+    email: infra@example.com
+  children: []
