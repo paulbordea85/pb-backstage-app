@@ -40,3 +40,15 @@ spec:
   parent: infrastructure
   children: []
   members: [paulb]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: infrastructure
+  description: Infrastructure
+spec:
+  type: business-unit
+  profile:
+    displayName: Backstage group
+    email: infra@example.com
+  children: []
