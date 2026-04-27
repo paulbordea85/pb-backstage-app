@@ -49,6 +49,6 @@ metadata:
 spec:
   type: business-unit
   profile:
-    displayName: Backstage group
+    displayName: Infrastructure group
     email: infra@example.com
   children: []
