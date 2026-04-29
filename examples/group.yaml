@@ -52,3 +52,19 @@ spec:
     displayName: Infrastructure group
     email: infra@example.com
   children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: administrators
+  description: Administrators
+spec:
+  type: business-unit
+  profile:
+    displayName: Administrators group
+    email: admin@example.com
+  children: []
+
+
+
+  
