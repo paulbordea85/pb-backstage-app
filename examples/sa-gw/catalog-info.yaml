@@ -46,7 +46,6 @@ spec:
   type: service
   lifecycle: development
   owner: administrators
-
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -55,6 +54,18 @@ metadata:
   # This is an extra long description with Markdown
   description: |
     test2-gateway
+spec:
+  type: service
+  lifecycle: development
+  owner: administrators
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: test3-gateway
+  # This is an extra long description with Markdown
+  description: |
+    test3-gateway
 spec:
   type: service
   lifecycle: development
