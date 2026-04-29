@@ -6,8 +6,6 @@ metadata:
   # This is an extra long description with Markdown
   description: |
     sa-gateway
-  annotations:
-    backstage.io/kubernetes-id: sa-gateway
 spec:
   type: service
   lifecycle: development
@@ -20,8 +18,6 @@ metadata:
   # This is an extra long description with Markdown
   description: |
     sp-gateway
-  annotations:
-    backstage.io/kubernetes-id: sp-gateway
 spec:
   type: service
   lifecycle: development
@@ -34,8 +30,6 @@ metadata:
   # This is an extra long description with Markdown
   description: |
     ei-gateway
-  annotations:
-    backstage.io/kubernetes-id: ei-gateway
 spec:
   type: service
   lifecycle: development
