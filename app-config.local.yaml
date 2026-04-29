@@ -18,11 +18,17 @@ integrations:
     - host: github.com
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
       # about setting up the GitHub integration here: https://backstage.io/docs/integrations/github/locations#configuration
-      #token: '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'
-      token: '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'
+      token: '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'
 
 backend:
   reading:
     allow:
       - host: 'gist.githubusercontent.com/'
       - host: 'github.com'
+  database:
+    client: pg
+    connection:
+      host: '127.0.0.1'
+      port: 5432
+      user: postgres
+

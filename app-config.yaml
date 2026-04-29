@@ -110,6 +110,18 @@ catalog:
     pullRequestBranchName: backstage-integration
   rules:
     - allow: [Component, System, API, Resource, Location, Group, User]
+  providers:
+    github:
+      development:
+        host: github.com
+        entityFilename: catalog-info.yaml
+        branch: master
+        schedule: # Same options as in SchedulerServiceTaskScheduleDefinition. Optional for the Legacy Backend System
+          # supports cron, ISO duration, "human duration" as used in code
+          frequency: { minutes: 2 }
+          # supports ISO duration, "human duration" as used in code
+          timeout: { minutes: 5 }
+
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
