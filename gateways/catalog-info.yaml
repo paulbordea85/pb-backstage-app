@@ -1,0 +1,36 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sa-gateway
+  # This is an extra long description with Markdown
+  description: |
+    sa-gateway
+spec:
+  type: service
+  lifecycle: development
+  owner: administrators
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sp-gateway
+  # This is an extra long description with Markdown
+  description: |
+    sp-gateway
+spec:
+  type: service
+  lifecycle: development
+  owner: administrators
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ei-gateway
+  # This is an extra long description with Markdown
+  description: |
+    ei-gateway
+spec:
+  type: service
+  lifecycle: development
+  owner: administrators
