@@ -107,7 +107,6 @@ scaffolder:
 catalog:
   import:
     entityFilename: catalog-info.yaml
-    pullRequestBranchName: backstage-integration
   rules:
     - allow: [Component, System, API, Resource, Location, Group, User]
   providers:

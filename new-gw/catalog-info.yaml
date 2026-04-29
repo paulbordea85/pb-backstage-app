@@ -1,0 +1,12 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: new-sa-gateway
+  # This is an extra long description with Markdown
+  description: |
+    new-sa-gateway
+spec:
+  type: service
+  lifecycle: development
+  owner: administrators
