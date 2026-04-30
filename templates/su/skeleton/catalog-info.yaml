@@ -17,6 +17,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: sp-gateway
+  {%- if values.description %}
   description: ${{values.description | dump}}
   {%- endif %}
   annotations:
@@ -31,6 +32,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ei-gateway
+  {%- if values.description %}
   description: ${{values.description | dump}}
   {%- endif %}
   annotations:
