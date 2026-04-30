@@ -3,12 +3,12 @@ kind: Template
 metadata:
   name: SU-Template
   title: SU Template
-  description: An example template for the scaffolder
+  description: A template for Service Universe
 spec:
   owner: user:guest
   type: service
   parameters:
-    - title: SU steps
+    - title: Name and Owner of the component
       required:
         - name
       properties:
@@ -24,7 +24,7 @@ spec:
           ui:options:
             catalogFilter:
               kind: Group
-    - title: Choose a location
+    - title: Location of the repo
       required:
         - repoUrl
       properties:
@@ -35,6 +35,7 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
+              - api.github.com
   steps:
     - id: fetch-base
       name: Fetch Base
