@@ -12,6 +12,8 @@ spec:
   type: service
   lifecycle: development
   owner: ${{values.owner | dump}}
+  providesApis:
+    - sample-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -50,8 +52,8 @@ metadata:
   description: API example for gRPC
 spec:
   type: grpc
-  lifecycle: deprecated
-  owner: team-c
+  lifecycle: development
+  owner: ${{values.owner | dump}}
   definition: |
     // Copyright 2015 gRPC authors.
     //
