@@ -17,24 +17,26 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: sp-gateway
+  description: ${{values.description | dump}}
+  {%- endif %}
   annotations:
+    github.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}}
     backstage.io/techdocs-ref: dir:.
-    github.com/project-slug: 'paulbordea85/su-test-01'
-  description: |
-    sp-gateway
 spec:
   type: service
   lifecycle: development
-  owner: administrators
+  owner: ${{values.owner | dump}}
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ei-gateway
-  # This is an extra long description with Markdown
-  description: |
-    ei-gateway
+  description: ${{values.description | dump}}
+  {%- endif %}
+  annotations:
+    github.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}}
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   lifecycle: development
-  owner: administrators
+  owner: ${{values.owner | dump}}
