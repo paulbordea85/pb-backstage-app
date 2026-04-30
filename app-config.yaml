@@ -122,6 +122,11 @@ catalog:
           timeout: { minutes: 5 }
 
   locations:
+    - type: url
+      target: https://github.com/paulbordea85/pb-backstage-app/tree/master/templates/su/template.yaml
+      rules:
+        - allow: [Template]
+
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
       target: ../../examples/entities.yaml
@@ -129,21 +134,6 @@ catalog:
     # Local example template
     - type: file
       target: ../../examples/template/template.yaml
-      rules:
-        - allow: [Template]
-
-    - type: url
-      target: https://github.com/paulbordea85/pb-backstage-app/tree/master/templates/sample01/template.yaml
-      rules:
-        - allow: [Template]
-
-    - type: url
-      target: https://github.com/paulbordea85/pb-backstage-app/tree/master/templates/sample02/template.yaml
-      rules:
-        - allow: [Template]
-
-    - type: url
-      target: https://github.com/paulbordea85/pb-backstage-app/tree/master/templates/su/template.yaml
       rules:
         - allow: [Template]
 
